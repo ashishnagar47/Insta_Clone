@@ -33,3 +33,9 @@ a{
     height: max-content;
     margin: 26px auto;
 }
+
+#toast-container{
+    top:90px !important;
+    right:650px !important;
+    left:auto !important; 
+}

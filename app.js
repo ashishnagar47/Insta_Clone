@@ -7,7 +7,7 @@ const {MONGOURI}=require('./keys')
 require('./models/user')
 require('./models/posts')
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+//app.use(express.urlencoded({extended:true}))
 const Auth=require('./routes/auth')
 const Post=require('./routes/posts')
 
