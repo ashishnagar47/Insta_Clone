@@ -28,7 +28,7 @@ route.post('/createPost',reqLogin,(req,res)=>{
 
 })
 
-route.get('/allPost',(req,res)=>{
+route.get('/allPost',reqLogin,(req,res)=>{
     
     Post.find()
     .populate("postedBy","name")

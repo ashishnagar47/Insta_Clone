@@ -22,9 +22,19 @@ a{
     border-bottom: 1px solid rgb(62,127,226) !important;
     box-shadow: 0 1px 0 0 rgb(62, 127, 226) !important;
   }
+  .input-field input[type=password]:focus {
+    border-bottom: 1px solid rgb(62,127,226) !important;
+    box-shadow: 0 1px 0 0 rgb(62, 127, 226) !important;
+  }
 
 .item{
     width: 30%;
+}
+
+.gallery{
+    display:flex;
+    justifyContent:space-around;
+    flexWrap:wrap;
 }
 
 

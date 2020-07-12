@@ -8,7 +8,7 @@ import M from "materialize-css"
         const [password,setPassword]=useState("")
         const [email,setEmail]=useState("")
         const PostData =()=>{
-            if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+            if(!/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(email)){
                 M.toast({html:"invalid email address",classes:"#d32f2f red darken-2"})
                 return
             }
@@ -40,7 +40,7 @@ import M from "materialize-css"
                     <h2>Instagram</h2>
                     <input type="text" placeholder="name" value={name} onChange={e=>setName(e.target.value)}></input>
                     <input type="text" placeholder="email" value={email} onChange={e=>setEmail(e.target.value)}></input>
-                    <input type="text" placeholder="password" value={password} onChange={e=>setPassword(e.target.value)}></input>
+                    <input type="password" placeholder="password" value={password} onChange={e=>setPassword(e.target.value)}></input>
                     <button className="btn waves-effect waves-light #42a5f5 blue lighten-1" onClick={()=>PostData()}>
                         Login
                     </button>

@@ -44,7 +44,7 @@ import M from 'materialize-css'
                 <div className="card auth-card input-field">
                     <h2>Instagram</h2>
                     <input type="text" placeholder="email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
-                    <input type="text" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
+                    <input type="password" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
                     <button className="btn waves-effect waves-light #42a5f5 blue lighten-1" onClick={PostData}>
                         Login
                     </button>
