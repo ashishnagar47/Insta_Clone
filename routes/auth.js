@@ -7,7 +7,7 @@ const jwt=require('jsonwebtoken')
 const {JWT_SECRET}=require('../keys')
 const reqLogin=require('../middlewares/reqLogin')
 
-route.get('/',(req,res)=>{
+route.get('/',reqLogin,(req,res)=>{
     res.send("hello")
 })
 

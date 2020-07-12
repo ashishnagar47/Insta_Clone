@@ -6,7 +6,7 @@ import Home from './screens/Home'
 import Login from './screens/Login'
 import Signup from './screens/Signup'
 import Profile from './screens/Profile'
-import CreatePost from './screens/createPost'
+import CreatePost from './screens/CreatePost'
 
 
 function App() {

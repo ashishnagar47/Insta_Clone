@@ -5,14 +5,16 @@ const reqLogin=require('../middlewares/reqLogin');
 const Post =mongoose.model("Post")
 
 route.post('/createPost',reqLogin,(req,res)=>{
-    const {title,body}=req.body
-    if(!title || !body){
-        return res.json("Please add all the fields")
+    const {title,body,pic}=req.body
+    if(!title || !body || !pic){
+        return res.json({error:"Please add all the fields"})
     }
+    console.log(title,body,pic)
     req.user.password=undefined
     const post=new Post({
         title,
         body,
+        picture:pic,
         postedBy:req.user
     })
 

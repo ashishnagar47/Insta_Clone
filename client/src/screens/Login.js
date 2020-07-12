@@ -26,6 +26,8 @@ import M from 'materialize-css'
                 M.toast({html:data.error,classes:"#d32f2f red darken-2"})
             }
             else{
+                localStorage.setItem("jwt",data.token)
+                localStorage.setItem("user",JSON.stringify(data.user))
                 M.toast({html:"Signedin successfully ",classes:"#4caf50 green"})
                 history.push('/')
             }

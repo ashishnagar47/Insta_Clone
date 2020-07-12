@@ -8,12 +8,12 @@ module.exports=(req,res,next)=>{
     const {authorization}=req.headers
 
     if(!authorization){
-        return res.send("You need to login first")
+        return res.json("You need to login first")
     }
     const token=authorization.replace("Bearer ","")
     jwt.verify(token,JWT_SECRET,(err,payload)=>{
         if(err){
-            res.send({err:"you must be logged in"})
+            res.json({err:"you must be logged in"})
         }
         const {_id}=payload
         User.findById(_id)
