@@ -6,7 +6,9 @@ const  Navbar=()=> {
         const history=useHistory()
         const {state,dispatch}=useContext(UserContext)
         const renderList=()=>{
+            console.log(state)
             if(state){
+                console.log("1123")
                 return[
                     <li><Link to="/profile">Profile</Link></li>,
                     <li><Link to="/create">Create Post </Link></li>,
@@ -22,6 +24,7 @@ const  Navbar=()=> {
                 ]
             }
             if(!state){
+                console.log("ashish")
                 return[
                 <li><Link to="/login">Login</Link></li>,
                 <li><Link to="/signup">Signup</Link></li>

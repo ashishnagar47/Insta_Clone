@@ -24,7 +24,7 @@ import M from 'materialize-css'
         .then(data=>{
             //console.log(data)
             if(data.error){
-                console.log(data)
+                
                 M.toast({html:data.error,classes:"#d32f2f red darken-2"})
             }
             else{
