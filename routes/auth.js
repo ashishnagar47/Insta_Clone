@@ -52,7 +52,7 @@ route.post('/login',(req,res)=>{
     User.findOne({email:email})
     .then((savedUser)=>{
         if(!savedUser){
-            res.json('invalid email or password')
+            res.json({"error":'invalid email or password'})
         }
         bcrypt.compare(password,savedUser.password)
         .then(doMatch=>{
@@ -63,7 +63,7 @@ route.post('/login',(req,res)=>{
                 res.json({token,user:{_id,name,email}})
             }
             else{
-                return res.json("invalid email or password")
+                return res.json({"error":"invalid email or password"})
             }
         })
         .catch(err=>{

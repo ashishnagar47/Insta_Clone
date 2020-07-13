@@ -14,7 +14,7 @@ import {UserContext} from '../App'
                 
                 setPics(result.myPost)
             })
-        })
+        },[])
         return (
             <div style={{maxWidth:"850px", margin:"0px auto"}}>
                 <div style={{
