@@ -8,7 +8,7 @@ const  Navbar=()=> {
         const renderList=()=>{
             console.log(state)
             if(state){
-                console.log("1123")
+                
                 return[
                     <li><Link to="/profile">Profile</Link></li>,
                     <li><Link to="/create">Create Post </Link></li>,

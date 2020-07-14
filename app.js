@@ -10,11 +10,13 @@ app.use(express.json())
 //app.use(express.urlencoded({extended:true}))
 const Auth=require('./routes/auth')
 const Post=require('./routes/posts')
+const User=require('./routes/user')
 
 
 
 app.use(Auth)
 app.use(Post)
+app.use(User)
 mongoose.connect(MONGOURI,{
     useNewUrlParser: true,
     useUnifiedTopology: true

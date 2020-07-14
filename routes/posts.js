@@ -57,7 +57,10 @@ route.put('/like',reqLogin,(req,res)=>{
         $push:{likes:req.user._id}
     },{
         new:true
-    }).exec((err,result)=>{
+    })
+    .populate("comments.postedBy","_id name")
+    .populate("postedBy","_id name")
+    .exec((err,result)=>{
         if(err){
             return res.status(422).json({error:err})
         }
@@ -72,7 +75,10 @@ route.put('/unlike',reqLogin,(req,res)=>{
         $pull:{likes:req.user._id}
     },{
         new:true
-    }).exec((err,result)=>{
+    })
+    .populate("comments.postedBy","_id name")
+    .populate("postedBy","_id name")
+    .exec((err,result)=>{
         if(err){
             return res.status(422).json({error:err})
         }
@@ -121,5 +127,7 @@ route.delete('/deletepost/:postId',reqLogin,(req,res)=>{
         }
      })
 })
+
+
 
 module.exports=route;
