@@ -41,9 +41,24 @@ route.get('/allPost',reqLogin,(req,res)=>{
     })
 })
 
+route.get('/getsubpost',reqLogin,(req,res)=>{
+
+    // if postedBy in following
+    Post.find({postedBy:{$in:req.user.following}})
+    .populate("postedBy","_id name")
+    .populate("comments.postedBy","_id name pic" )
+    .sort('-createdAt')
+    .then(posts=>{
+        res.json({posts})
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})
+
 route.get('/myPost',reqLogin,(req,res)=>{
     Post.find({postedBy:req.user._id})
-    .populate("postedBy","name")
+    .populate("postedBy","name pic")
     .then(myPost=>{
         res.json({myPost})
     })
@@ -126,6 +141,28 @@ route.delete('/deletepost/:postId',reqLogin,(req,res)=>{
             })
         }
      })
+})
+
+route.put('/deleteComment',reqLogin,(req,res)=>{
+    const comment={
+        text:req.body.text,
+        postedBy:req.user._id
+    }
+    Post.findByIdAndUpdate(req.body.postId,{
+        $pull:{comments:comment}
+    },{
+        new:true
+    })
+    .populate("comments.postedBy","_id name")
+    .populate("postedBy","_id name")
+    .exec((err,result)=>{
+        if(err){
+            return res.status(422).json({error:err})
+        }
+        else{
+             res.json(result)
+        }
+    })
 })
 
 

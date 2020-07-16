@@ -25,14 +25,15 @@ import {UserContext} from '../../App'
                 }}>
                     <div>
                         <img style={{width:"160px",height:"160px", borderRadius:"80px"}}
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"></img>
+                        src={state?state.pic:"loading"}></img>
                     </div>
                     <div> 
                         <h4>{state?state.name:"loading"}</h4>
+                        <h4>{state?state.email:"loading"}</h4>
                         <div style={{display:"flex", justifyContent:"space-around", width:"108%"} }>
-                            <h6>40 posts</h6>
-                            <h6>40 followers</h6>
-                            <h6>40 following</h6>
+                            <h6>{myPics.length} posts</h6>
+                            <h6>{state?state.followers.length:0} followers</h6>
+                            <h6>{state?state.following.length:0} following</h6>
                         </div>
                     </div>
                 </div>

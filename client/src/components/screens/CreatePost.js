@@ -76,7 +76,7 @@ const CreatePost=()=> {
                 <div className="file-path-wrapper">
                     <input className="file-path validate" type="text"></input>
                 </div>
-                </div>
+            </div>
                 <button className="btn waves-effect waves-light #42a5f5 blue darken" onClick={()=>postDetails()}>
                         Submit Post
                 </button>

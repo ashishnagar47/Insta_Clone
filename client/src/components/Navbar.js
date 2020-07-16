@@ -10,8 +10,9 @@ const  Navbar=()=> {
             if(state){
                 
                 return[
-                    <li><Link to="/profile">Profile</Link></li>,
-                    <li><Link to="/create">Create Post </Link></li>,
+                    <li><Link to="/profile"><i class="material-icons">account_circle</i></Link></li>,
+                    <li><Link to="/create"><i class="material-icons">add_a_photo</i></Link></li>,
+                    <li><Link to="/myfollowingPost"> <i class="material-icons">explore</i></Link></li>,
                     <li>
                     <button className="btn waves-effect waves-light #b71c1c red darken-4" onClick={()=>{
                         localStorage.clear()
@@ -38,7 +39,7 @@ const  Navbar=()=> {
                 <nav>
                     <div className="nav-wrapper white" >
                     <Link to={state?"/":"/login"} className="brand-logo left">Instagram</Link>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    <ul id="nav-mobile" className="right">
                             {renderList()}
                     </ul>
                     </div>
